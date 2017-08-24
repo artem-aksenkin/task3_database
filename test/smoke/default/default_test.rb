@@ -24,3 +24,11 @@ end
 describe bash("mysql -S /var/run/mysql-default/mysqld.sock -uroot -ppassword -e 'show databases'") do
   its('stdout') { should include 'task3' }
 end
+
+# describe mysql_session('uroot', 'ppassword') do
+#   its('port') { should eq '3306' }
+#   its('socket') { should eq '/var/run/mysql-default/mysqld.sock' }
+#   its('default_storage_engine') { should eq 'InnoDB' }
+#   its('character_set_server') { should eq 'utf8' }
+#   its('collation_server') { should eq 'utf8_general_ci' }
+# end
